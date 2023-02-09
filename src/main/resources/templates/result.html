@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> THIS IS RESULT </h1>
+    <hr>
+    <!-- <span data-th-text="${orders}"></span> -->
+
+    <div data-th-unless="${orders}">
+        <h1>Data does not exist</h1>
+    </div>
+    
+    <div data-th-if="${orders}">
+        <div data-th-each="order : ${orders}" style="border-style: solid;">
+            <!-- <span data-th-text="${order}"></span> -->
+            <ul>
+                <li data-th-text="'Order ID: ' + ${order.orderId}"></li>
+                <li data-th-text="'Order Date: ' + ${order.orderDate}"></li>
+                <li data-th-text="'Customer ID: ' + ${order.customerId}"></li>
+                <li data-th-text="'Total: ' + ${order.total}"></li>
+                <li data-th-text="'Cost Price: ' + ${order.costPrice}"></li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
